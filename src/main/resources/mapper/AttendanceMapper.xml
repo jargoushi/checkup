@@ -79,4 +79,13 @@
     status, update_by, update_time, user_id, username, work_no
     from attendance
   </select>
+  <select id="selectByCondition" resultType="com.devise.checkup.domain.Attendance">
+    <![CDATA[
+     select id, create_by, create_time, del_flag, duration, enter_image, enter_recording,
+    entry_time, inspection_time, out_image, out_recording, out_time, process, realname,
+    status, update_by, update_time, user_id, username, work_no
+    from attendance
+    where create_time >= #{startTime} and create_time <= #{endTime}
+    ]]>
+  </select>
 </mapper>

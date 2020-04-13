@@ -1,6 +1,7 @@
 package com.devise.checkup.mapper;
 
 import com.devise.checkup.domain.RunningLog;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 public interface RunningLogMapper {
@@ -13,4 +14,6 @@ public interface RunningLogMapper {
     List<RunningLog> selectAll();
 
     int updateByPrimaryKey(RunningLog record);
+
+    List<RunningLog> selectByCondition(@Param("startTime") String startTime, @Param("endTime") String endTime);
 }

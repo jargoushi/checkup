@@ -1,6 +1,7 @@
 package com.devise.checkup.mapper;
 
 import com.devise.checkup.domain.InspectionRecord;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 public interface InspectionRecordMapper {
@@ -13,4 +14,6 @@ public interface InspectionRecordMapper {
     List<InspectionRecord> selectAll();
 
     int updateByPrimaryKey(InspectionRecord record);
+
+    List<InspectionRecord> selectByCondition(@Param("startTime") String startTime, @Param("endTime") String endTime);
 }

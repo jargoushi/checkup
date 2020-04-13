@@ -79,4 +79,13 @@
     template_id, update_by, update_time
     from inspection_record
   </select>
+    <select id="selectByCondition" resultType="com.devise.checkup.domain.InspectionRecord">
+      <![CDATA[
+      select id, check_person, conclusion, create_by, create_time, description, duty, problem1,
+    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status,
+    template_id, update_by, update_time
+    from inspection_record
+    where create_time >= #{startTime} and create_time <= #{endTime}
+    ]]>
+    </select>
 </mapper>
