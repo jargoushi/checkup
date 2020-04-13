@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.devise.checkup.mapper.AttendanceMapper" >
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.Attendance" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="duration" property="duration" jdbcType="VARCHAR" />
+    <result column="enter_image" property="enterImage" jdbcType="VARCHAR" />
+    <result column="enter_recording" property="enterRecording" jdbcType="VARCHAR" />
+    <result column="entry_time" property="entryTime" jdbcType="TIMESTAMP" />
+    <result column="inspection_time" property="inspectionTime" jdbcType="TIMESTAMP" />
+    <result column="out_image" property="outImage" jdbcType="VARCHAR" />
+    <result column="out_recording" property="outRecording" jdbcType="VARCHAR" />
+    <result column="out_time" property="outTime" jdbcType="TIMESTAMP" />
+    <result column="process" property="process" jdbcType="BIGINT" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="work_no" property="workNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from attendance
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.devise.checkup.domain.Attendance" >
+    insert into attendance (id, create_by, create_time, 
+      del_flag, duration, enter_image, 
+      enter_recording, entry_time, inspection_time, 
+      out_image, out_recording, out_time, 
+      process, realname, status, 
+      update_by, update_time, user_id, 
+      username, work_no)
+    values (#{id,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{delFlag,jdbcType=VARCHAR}, #{duration,jdbcType=VARCHAR}, #{enterImage,jdbcType=VARCHAR}, 
+      #{enterRecording,jdbcType=VARCHAR}, #{entryTime,jdbcType=TIMESTAMP}, #{inspectionTime,jdbcType=TIMESTAMP}, 
+      #{outImage,jdbcType=VARCHAR}, #{outRecording,jdbcType=VARCHAR}, #{outTime,jdbcType=TIMESTAMP}, 
+      #{process,jdbcType=BIGINT}, #{realname,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{workNo,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.Attendance" >
+    update attendance
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      duration = #{duration,jdbcType=VARCHAR},
+      enter_image = #{enterImage,jdbcType=VARCHAR},
+      enter_recording = #{enterRecording,jdbcType=VARCHAR},
+      entry_time = #{entryTime,jdbcType=TIMESTAMP},
+      inspection_time = #{inspectionTime,jdbcType=TIMESTAMP},
+      out_image = #{outImage,jdbcType=VARCHAR},
+      out_recording = #{outRecording,jdbcType=VARCHAR},
+      out_time = #{outTime,jdbcType=TIMESTAMP},
+      process = #{process,jdbcType=BIGINT},
+      realname = #{realname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      work_no = #{workNo,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select id, create_by, create_time, del_flag, duration, enter_image, enter_recording, 
+    entry_time, inspection_time, out_image, out_recording, out_time, process, realname, 
+    status, update_by, update_time, user_id, username, work_no
+    from attendance
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, create_by, create_time, del_flag, duration, enter_image, enter_recording, 
+    entry_time, inspection_time, out_image, out_recording, out_time, process, realname, 
+    status, update_by, update_time, user_id, username, work_no
+    from attendance
+  </select>
+</mapper>

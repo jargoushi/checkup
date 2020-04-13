@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+
+spring:
+  datasource:
+    druid:
+      username: root
+      password: 1234
+      #url中database为对应的数据库名称
+      url: jdbc:mysql://localhost:3306/checkup?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.devse.checkup.domain
+
+#分页pageHelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+#showSql
+logging:
+  level:
+    com.example.demo.mapper: debug
+
+# swagger
+swagger:
+  base-package: com.devise.checkup.controller
+  base-path: /**
+  title: 巡检系统
