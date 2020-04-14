@@ -11,6 +11,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @Version 1.0
  * @Author:ruwb
@@ -47,7 +50,7 @@ public class AttendanceController {
 
     @PostMapping("/add")
     @ApiOperation(value = "新增考勤信息")
-    public ResponseResult addAttendance(@RequestBody Attendance attendance) {
+    public ResponseResult<Boolean> addAttendance(@RequestBody Attendance attendance) {
         logger.info("新增考勤信息 start, attendance=【{}】", attendance);
         try {
             Boolean flag = attendanceService.addAttendance(attendance);
@@ -62,7 +65,7 @@ public class AttendanceController {
 
     @PostMapping("/modify")
     @ApiOperation(value = "修改考勤信息")
-    public ResponseResult modifyAttendance(@RequestBody Attendance attendance) {
+    public ResponseResult<Boolean> modifyAttendance(@RequestBody Attendance attendance) {
         logger.info("修改考勤信息 start, attendance=【{}】", attendance);
         try {
             Boolean flag = attendanceService.modifyAttendance(attendance);
@@ -76,7 +79,7 @@ public class AttendanceController {
 
     @DeleteMapping("/delete/{id}")
     @ApiOperation(value = "根据id删除考勤信息")
-    public ResponseResult deleteAttendance(@PathVariable Integer id) {
+    public ResponseResult<Boolean> deleteAttendance(@PathVariable Integer id) {
         logger.info("根据id删除考勤信息 start, id=【{}】", id);
         try {
             Boolean flag = attendanceService.deleteAttendance(id);
@@ -85,6 +88,22 @@ public class AttendanceController {
         } catch (Exception e) {
             logger.info("根据id删除考勤信息 error", e);
             return new ResponseResult().error();
+        }
+    }
+
+    @ApiOperation(value = "导出考勤信息")
+    @GetMapping(value = "/export")
+    public void exportExcel(@RequestParam(required = false) String startTime,
+                                               @RequestParam(required = false) String endTime,
+                                               HttpServletRequest request,
+                                               HttpServletResponse response) {
+
+        logger.info("导出考勤信息 start, startTime=【{}】, endTime=【{}】", startTime, endTime);
+        try {
+            attendanceService.exportExcel(startTime, endTime, request, response);
+            logger.info("导出考勤信息 success");
+        } catch (Exception e) {
+            logger.info("导出考勤信息 error", e);
         }
     }
 }

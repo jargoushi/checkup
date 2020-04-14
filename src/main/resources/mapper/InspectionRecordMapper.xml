@@ -88,4 +88,7 @@
     where create_time >= #{startTime} and create_time <= #{endTime}
     ]]>
     </select>
+    <select id="query30MinuteRecord" resultType="java.lang.Integer">
+      SELECT COUNT(1) FROM inspection_record WHERE create_time >= CURRENT_TIMESTAMP  - INTERVAL   30 MINUTE
+    </select>
 </mapper>

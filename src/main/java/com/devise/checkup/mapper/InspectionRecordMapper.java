@@ -16,4 +16,6 @@ public interface InspectionRecordMapper {
     int updateByPrimaryKey(InspectionRecord record);
 
     List<InspectionRecord> selectByCondition(@Param("startTime") String startTime, @Param("endTime") String endTime);
+
+    int query30MinuteRecord();
 }

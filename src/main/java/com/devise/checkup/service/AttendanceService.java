@@ -3,6 +3,9 @@ package com.devise.checkup.service;
 import com.devise.checkup.domain.Attendance;
 import com.devise.checkup.domain.PageBaseInfo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @Version 1.0
  * @Author:ruwb
@@ -26,4 +29,6 @@ public interface AttendanceService {
     Boolean modifyAttendance(Attendance attendance);
 
     Boolean deleteAttendance(Integer id);
+
+    void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response);
 }
