@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.devise.checkup.mapper.InspectionRecordMapper">
-  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.InspectionRecord">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="check_person" jdbcType="VARCHAR" property="checkPerson" />
-    <result column="conclusion" jdbcType="INTEGER" property="conclusion" />
-    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="duty" jdbcType="INTEGER" property="duty" />
-    <result column="problem1" jdbcType="VARCHAR" property="problem1" />
-    <result column="problem2" jdbcType="VARCHAR" property="problem2" />
-    <result column="problem3" jdbcType="VARCHAR" property="problem3" />
-    <result column="problem4" jdbcType="VARCHAR" property="problem4" />
-    <result column="problem5" jdbcType="VARCHAR" property="problem5" />
-    <result column="problem6" jdbcType="VARCHAR" property="problem6" />
-    <result column="serial" jdbcType="VARCHAR" property="serial" />
-    <result column="staff1" jdbcType="VARCHAR" property="staff1" />
-    <result column="staff2" jdbcType="VARCHAR" property="staff2" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="template_id" jdbcType="BIGINT" property="templateId" />
-    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.devise.checkup.mapper.InspectionRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.InspectionRecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="check_person" property="checkPerson" jdbcType="VARCHAR" />
+    <result column="conclusion" property="conclusion" jdbcType="INTEGER" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="INTEGER" />
+    <result column="problem1" property="problem1" jdbcType="VARCHAR" />
+    <result column="problem2" property="problem2" jdbcType="VARCHAR" />
+    <result column="problem3" property="problem3" jdbcType="VARCHAR" />
+    <result column="problem4" property="problem4" jdbcType="VARCHAR" />
+    <result column="problem5" property="problem5" jdbcType="VARCHAR" />
+    <result column="problem6" property="problem6" jdbcType="VARCHAR" />
+    <result column="serial" property="serial" jdbcType="VARCHAR" />
+    <result column="staff1" property="staff1" jdbcType="VARCHAR" />
+    <result column="staff2" property="staff2" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="template_id" property="templateId" jdbcType="BIGINT" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from inspection_record
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.devise.checkup.domain.InspectionRecord">
+  <insert id="insert" parameterType="com.devise.checkup.domain.InspectionRecord" >
     insert into inspection_record (id, check_person, conclusion, 
       create_by, create_time, description, 
       duty, problem1, problem2, 
@@ -43,7 +43,7 @@
       #{staff2,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT}, 
       #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.InspectionRecord">
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.InspectionRecord" >
     update inspection_record
     set check_person = #{checkPerson,jdbcType=VARCHAR},
       conclusion = #{conclusion,jdbcType=INTEGER},
@@ -66,248 +66,14 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
     problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
     template_id, update_by, update_time
     from inspection_record
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-  </select>
-  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.InspectionRecord">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="check_person" jdbcType="VARCHAR" property="checkPerson" />
-    <result column="conclusion" jdbcType="INTEGER" property="conclusion" />
-    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="duty" jdbcType="INTEGER" property="duty" />
-    <result column="problem1" jdbcType="VARCHAR" property="problem1" />
-    <result column="problem2" jdbcType="VARCHAR" property="problem2" />
-    <result column="problem3" jdbcType="VARCHAR" property="problem3" />
-    <result column="problem4" jdbcType="VARCHAR" property="problem4" />
-    <result column="problem5" jdbcType="VARCHAR" property="problem5" />
-    <result column="problem6" jdbcType="VARCHAR" property="problem6" />
-    <result column="serial" jdbcType="VARCHAR" property="serial" />
-    <result column="staff1" jdbcType="VARCHAR" property="staff1" />
-    <result column="staff2" jdbcType="VARCHAR" property="staff2" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="template_id" jdbcType="BIGINT" property="templateId" />
-    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.devise.checkup.domain.InspectionRecord">
-    insert into inspection_record (id, check_person, conclusion, 
-      create_by, create_time, description, 
-      duty, problem1, problem2, 
-      problem3, problem4, problem5, 
-      problem6, serial, staff1, 
-      staff2, status, template_id, 
-      update_by, update_time)
-    values (#{id,jdbcType=BIGINT}, #{checkPerson,jdbcType=VARCHAR}, #{conclusion,jdbcType=INTEGER}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, 
-      #{duty,jdbcType=INTEGER}, #{problem1,jdbcType=VARCHAR}, #{problem2,jdbcType=VARCHAR}, 
-      #{problem3,jdbcType=VARCHAR}, #{problem4,jdbcType=VARCHAR}, #{problem5,jdbcType=VARCHAR}, 
-      #{problem6,jdbcType=VARCHAR}, #{serial,jdbcType=VARCHAR}, #{staff1,jdbcType=VARCHAR}, 
-      #{staff2,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT}, 
-      #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.InspectionRecord">
-    update inspection_record
-    set check_person = #{checkPerson,jdbcType=VARCHAR},
-      conclusion = #{conclusion,jdbcType=INTEGER},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      description = #{description,jdbcType=VARCHAR},
-      duty = #{duty,jdbcType=INTEGER},
-      problem1 = #{problem1,jdbcType=VARCHAR},
-      problem2 = #{problem2,jdbcType=VARCHAR},
-      problem3 = #{problem3,jdbcType=VARCHAR},
-      problem4 = #{problem4,jdbcType=VARCHAR},
-      problem5 = #{problem5,jdbcType=VARCHAR},
-      problem6 = #{problem6,jdbcType=VARCHAR},
-      serial = #{serial,jdbcType=VARCHAR},
-      staff1 = #{staff1,jdbcType=VARCHAR},
-      staff2 = #{staff2,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      template_id = #{templateId,jdbcType=BIGINT},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-  </select>
-  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.InspectionRecord">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="check_person" jdbcType="VARCHAR" property="checkPerson" />
-    <result column="conclusion" jdbcType="INTEGER" property="conclusion" />
-    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="duty" jdbcType="INTEGER" property="duty" />
-    <result column="problem1" jdbcType="VARCHAR" property="problem1" />
-    <result column="problem2" jdbcType="VARCHAR" property="problem2" />
-    <result column="problem3" jdbcType="VARCHAR" property="problem3" />
-    <result column="problem4" jdbcType="VARCHAR" property="problem4" />
-    <result column="problem5" jdbcType="VARCHAR" property="problem5" />
-    <result column="problem6" jdbcType="VARCHAR" property="problem6" />
-    <result column="serial" jdbcType="VARCHAR" property="serial" />
-    <result column="staff1" jdbcType="VARCHAR" property="staff1" />
-    <result column="staff2" jdbcType="VARCHAR" property="staff2" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="template_id" jdbcType="BIGINT" property="templateId" />
-    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.devise.checkup.domain.InspectionRecord">
-    insert into inspection_record (id, check_person, conclusion, 
-      create_by, create_time, description, 
-      duty, problem1, problem2, 
-      problem3, problem4, problem5, 
-      problem6, serial, staff1, 
-      staff2, status, template_id, 
-      update_by, update_time)
-    values (#{id,jdbcType=BIGINT}, #{checkPerson,jdbcType=VARCHAR}, #{conclusion,jdbcType=INTEGER}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, 
-      #{duty,jdbcType=INTEGER}, #{problem1,jdbcType=VARCHAR}, #{problem2,jdbcType=VARCHAR}, 
-      #{problem3,jdbcType=VARCHAR}, #{problem4,jdbcType=VARCHAR}, #{problem5,jdbcType=VARCHAR}, 
-      #{problem6,jdbcType=VARCHAR}, #{serial,jdbcType=VARCHAR}, #{staff1,jdbcType=VARCHAR}, 
-      #{staff2,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT}, 
-      #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.InspectionRecord">
-    update inspection_record
-    set check_person = #{checkPerson,jdbcType=VARCHAR},
-      conclusion = #{conclusion,jdbcType=INTEGER},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      description = #{description,jdbcType=VARCHAR},
-      duty = #{duty,jdbcType=INTEGER},
-      problem1 = #{problem1,jdbcType=VARCHAR},
-      problem2 = #{problem2,jdbcType=VARCHAR},
-      problem3 = #{problem3,jdbcType=VARCHAR},
-      problem4 = #{problem4,jdbcType=VARCHAR},
-      problem5 = #{problem5,jdbcType=VARCHAR},
-      problem6 = #{problem6,jdbcType=VARCHAR},
-      serial = #{serial,jdbcType=VARCHAR},
-      staff1 = #{staff1,jdbcType=VARCHAR},
-      staff2 = #{staff2,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      template_id = #{templateId,jdbcType=BIGINT},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-  </select>
-  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.InspectionRecord">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="check_person" jdbcType="VARCHAR" property="checkPerson" />
-    <result column="conclusion" jdbcType="INTEGER" property="conclusion" />
-    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="duty" jdbcType="INTEGER" property="duty" />
-    <result column="problem1" jdbcType="VARCHAR" property="problem1" />
-    <result column="problem2" jdbcType="VARCHAR" property="problem2" />
-    <result column="problem3" jdbcType="VARCHAR" property="problem3" />
-    <result column="problem4" jdbcType="VARCHAR" property="problem4" />
-    <result column="problem5" jdbcType="VARCHAR" property="problem5" />
-    <result column="problem6" jdbcType="VARCHAR" property="problem6" />
-    <result column="serial" jdbcType="VARCHAR" property="serial" />
-    <result column="staff1" jdbcType="VARCHAR" property="staff1" />
-    <result column="staff2" jdbcType="VARCHAR" property="staff2" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="template_id" jdbcType="BIGINT" property="templateId" />
-    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.devise.checkup.domain.InspectionRecord">
-    insert into inspection_record (id, check_person, conclusion, 
-      create_by, create_time, description, 
-      duty, problem1, problem2, 
-      problem3, problem4, problem5, 
-      problem6, serial, staff1, 
-      staff2, status, template_id, 
-      update_by, update_time)
-    values (#{id,jdbcType=BIGINT}, #{checkPerson,jdbcType=VARCHAR}, #{conclusion,jdbcType=INTEGER}, 
-      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, 
-      #{duty,jdbcType=INTEGER}, #{problem1,jdbcType=VARCHAR}, #{problem2,jdbcType=VARCHAR}, 
-      #{problem3,jdbcType=VARCHAR}, #{problem4,jdbcType=VARCHAR}, #{problem5,jdbcType=VARCHAR}, 
-      #{problem6,jdbcType=VARCHAR}, #{serial,jdbcType=VARCHAR}, #{staff1,jdbcType=VARCHAR}, 
-      #{staff2,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT}, 
-      #{updateBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.InspectionRecord">
-    update inspection_record
-    set check_person = #{checkPerson,jdbcType=VARCHAR},
-      conclusion = #{conclusion,jdbcType=INTEGER},
-      create_by = #{createBy,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      description = #{description,jdbcType=VARCHAR},
-      duty = #{duty,jdbcType=INTEGER},
-      problem1 = #{problem1,jdbcType=VARCHAR},
-      problem2 = #{problem2,jdbcType=VARCHAR},
-      problem3 = #{problem3,jdbcType=VARCHAR},
-      problem4 = #{problem4,jdbcType=VARCHAR},
-      problem5 = #{problem5,jdbcType=VARCHAR},
-      problem6 = #{problem6,jdbcType=VARCHAR},
-      serial = #{serial,jdbcType=VARCHAR},
-      staff1 = #{staff1,jdbcType=VARCHAR},
-      staff2 = #{staff2,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      template_id = #{templateId,jdbcType=BIGINT},
-      update_by = #{updateBy,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
-    problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
-    template_id, update_by, update_time
-    from inspection_record
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap" >
     select id, check_person, conclusion, create_by, create_time, description, duty, problem1, 
     problem2, problem3, problem4, problem5, problem6, serial, staff1, staff2, status, 
     template_id, update_by, update_time
@@ -323,6 +89,6 @@
     ]]>
     </select>
     <select id="query30MinuteRecord" resultType="java.lang.Integer">
-      SELECT COUNT(1) FROM inspection_record WHERE create_time &gt;= CURRENT_TIMESTAMP  - INTERVAL   30 MINUTE
+      SELECT COUNT(1) FROM inspection_record WHERE create_time >= CURRENT_TIMESTAMP  - INTERVAL   30 MINUTE
     </select>
 </mapper>
