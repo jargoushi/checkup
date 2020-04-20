@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.devise.checkup.mapper.RunningLogMapper" >
-  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.RunningLog" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="description" property="description" jdbcType="VARCHAR" />
-    <result column="hour" property="hour" jdbcType="BIGINT" />
-    <result column="operator_duty" property="operatorDuty" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="VARCHAR" />
-    <result column="tag1" property="tag1" jdbcType="INTEGER" />
-    <result column="tag10" property="tag10" jdbcType="INTEGER" />
-    <result column="tag11" property="tag11" jdbcType="INTEGER" />
-    <result column="tag12" property="tag12" jdbcType="INTEGER" />
-    <result column="tag13" property="tag13" jdbcType="INTEGER" />
-    <result column="tag14" property="tag14" jdbcType="INTEGER" />
-    <result column="tag15" property="tag15" jdbcType="INTEGER" />
-    <result column="tag2" property="tag2" jdbcType="INTEGER" />
-    <result column="tag3" property="tag3" jdbcType="INTEGER" />
-    <result column="tag4" property="tag4" jdbcType="INTEGER" />
-    <result column="tag5" property="tag5" jdbcType="INTEGER" />
-    <result column="tag6" property="tag6" jdbcType="INTEGER" />
-    <result column="tag7" property="tag7" jdbcType="INTEGER" />
-    <result column="tag8" property="tag8" jdbcType="INTEGER" />
-    <result column="tag9" property="tag9" jdbcType="INTEGER" />
-    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="value1" property="value1" jdbcType="DECIMAL" />
-    <result column="value10" property="value10" jdbcType="DECIMAL" />
-    <result column="value11" property="value11" jdbcType="DECIMAL" />
-    <result column="value12" property="value12" jdbcType="DECIMAL" />
-    <result column="value13" property="value13" jdbcType="DECIMAL" />
-    <result column="value14" property="value14" jdbcType="DECIMAL" />
-    <result column="value15" property="value15" jdbcType="DECIMAL" />
-    <result column="value2" property="value2" jdbcType="DECIMAL" />
-    <result column="value3" property="value3" jdbcType="DECIMAL" />
-    <result column="value4" property="value4" jdbcType="DECIMAL" />
-    <result column="value5" property="value5" jdbcType="DECIMAL" />
-    <result column="value6" property="value6" jdbcType="DECIMAL" />
-    <result column="value7" property="value7" jdbcType="DECIMAL" />
-    <result column="value8" property="value8" jdbcType="DECIMAL" />
-    <result column="value9" property="value9" jdbcType="DECIMAL" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devise.checkup.mapper.RunningLogMapper">
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.RunningLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hour" jdbcType="BIGINT" property="hour" />
+    <result column="operator_duty" jdbcType="VARCHAR" property="operatorDuty" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="tag1" jdbcType="INTEGER" property="tag1" />
+    <result column="tag10" jdbcType="INTEGER" property="tag10" />
+    <result column="tag11" jdbcType="INTEGER" property="tag11" />
+    <result column="tag12" jdbcType="INTEGER" property="tag12" />
+    <result column="tag13" jdbcType="INTEGER" property="tag13" />
+    <result column="tag14" jdbcType="INTEGER" property="tag14" />
+    <result column="tag15" jdbcType="INTEGER" property="tag15" />
+    <result column="tag2" jdbcType="INTEGER" property="tag2" />
+    <result column="tag3" jdbcType="INTEGER" property="tag3" />
+    <result column="tag4" jdbcType="INTEGER" property="tag4" />
+    <result column="tag5" jdbcType="INTEGER" property="tag5" />
+    <result column="tag6" jdbcType="INTEGER" property="tag6" />
+    <result column="tag7" jdbcType="INTEGER" property="tag7" />
+    <result column="tag8" jdbcType="INTEGER" property="tag8" />
+    <result column="tag9" jdbcType="INTEGER" property="tag9" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="value1" jdbcType="DECIMAL" property="value1" />
+    <result column="value10" jdbcType="DECIMAL" property="value10" />
+    <result column="value11" jdbcType="DECIMAL" property="value11" />
+    <result column="value12" jdbcType="DECIMAL" property="value12" />
+    <result column="value13" jdbcType="DECIMAL" property="value13" />
+    <result column="value14" jdbcType="DECIMAL" property="value14" />
+    <result column="value15" jdbcType="DECIMAL" property="value15" />
+    <result column="value2" jdbcType="DECIMAL" property="value2" />
+    <result column="value3" jdbcType="DECIMAL" property="value3" />
+    <result column="value4" jdbcType="DECIMAL" property="value4" />
+    <result column="value5" jdbcType="DECIMAL" property="value5" />
+    <result column="value6" jdbcType="DECIMAL" property="value6" />
+    <result column="value7" jdbcType="DECIMAL" property="value7" />
+    <result column="value8" jdbcType="DECIMAL" property="value8" />
+    <result column="value9" jdbcType="DECIMAL" property="value9" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from running_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.devise.checkup.domain.RunningLog" >
+  <insert id="insert" parameterType="com.devise.checkup.domain.RunningLog">
     insert into running_log (id, create_by, create_time, 
       description, hour, operator_duty, 
       status, tag1, tag10, 
@@ -74,7 +74,7 @@
       #{value6,jdbcType=DECIMAL}, #{value7,jdbcType=DECIMAL}, #{value8,jdbcType=DECIMAL}, 
       #{value9,jdbcType=DECIMAL})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.RunningLog" >
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.RunningLog">
     update running_log
     set create_by = #{createBy,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -116,7 +116,7 @@
       value9 = #{value9,jdbcType=DECIMAL}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
     tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
     tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
@@ -124,7 +124,397 @@
     from running_log
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap" >
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+  </select>
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.RunningLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hour" jdbcType="BIGINT" property="hour" />
+    <result column="operator_duty" jdbcType="VARCHAR" property="operatorDuty" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="tag1" jdbcType="INTEGER" property="tag1" />
+    <result column="tag10" jdbcType="INTEGER" property="tag10" />
+    <result column="tag11" jdbcType="INTEGER" property="tag11" />
+    <result column="tag12" jdbcType="INTEGER" property="tag12" />
+    <result column="tag13" jdbcType="INTEGER" property="tag13" />
+    <result column="tag14" jdbcType="INTEGER" property="tag14" />
+    <result column="tag15" jdbcType="INTEGER" property="tag15" />
+    <result column="tag2" jdbcType="INTEGER" property="tag2" />
+    <result column="tag3" jdbcType="INTEGER" property="tag3" />
+    <result column="tag4" jdbcType="INTEGER" property="tag4" />
+    <result column="tag5" jdbcType="INTEGER" property="tag5" />
+    <result column="tag6" jdbcType="INTEGER" property="tag6" />
+    <result column="tag7" jdbcType="INTEGER" property="tag7" />
+    <result column="tag8" jdbcType="INTEGER" property="tag8" />
+    <result column="tag9" jdbcType="INTEGER" property="tag9" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="value1" jdbcType="DECIMAL" property="value1" />
+    <result column="value10" jdbcType="DECIMAL" property="value10" />
+    <result column="value11" jdbcType="DECIMAL" property="value11" />
+    <result column="value12" jdbcType="DECIMAL" property="value12" />
+    <result column="value13" jdbcType="DECIMAL" property="value13" />
+    <result column="value14" jdbcType="DECIMAL" property="value14" />
+    <result column="value15" jdbcType="DECIMAL" property="value15" />
+    <result column="value2" jdbcType="DECIMAL" property="value2" />
+    <result column="value3" jdbcType="DECIMAL" property="value3" />
+    <result column="value4" jdbcType="DECIMAL" property="value4" />
+    <result column="value5" jdbcType="DECIMAL" property="value5" />
+    <result column="value6" jdbcType="DECIMAL" property="value6" />
+    <result column="value7" jdbcType="DECIMAL" property="value7" />
+    <result column="value8" jdbcType="DECIMAL" property="value8" />
+    <result column="value9" jdbcType="DECIMAL" property="value9" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.devise.checkup.domain.RunningLog">
+    insert into running_log (id, create_by, create_time, 
+      description, hour, operator_duty, 
+      status, tag1, tag10, 
+      tag11, tag12, tag13, 
+      tag14, tag15, tag2, 
+      tag3, tag4, tag5, tag6, 
+      tag7, tag8, tag9, update_by, 
+      update_time, value1, value10, 
+      value11, value12, value13, 
+      value14, value15, value2, 
+      value3, value4, value5, 
+      value6, value7, value8, 
+      value9)
+    values (#{id,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR}, #{hour,jdbcType=BIGINT}, #{operatorDuty,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{tag1,jdbcType=INTEGER}, #{tag10,jdbcType=INTEGER}, 
+      #{tag11,jdbcType=INTEGER}, #{tag12,jdbcType=INTEGER}, #{tag13,jdbcType=INTEGER}, 
+      #{tag14,jdbcType=INTEGER}, #{tag15,jdbcType=INTEGER}, #{tag2,jdbcType=INTEGER}, 
+      #{tag3,jdbcType=INTEGER}, #{tag4,jdbcType=INTEGER}, #{tag5,jdbcType=INTEGER}, #{tag6,jdbcType=INTEGER}, 
+      #{tag7,jdbcType=INTEGER}, #{tag8,jdbcType=INTEGER}, #{tag9,jdbcType=INTEGER}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{value1,jdbcType=DECIMAL}, #{value10,jdbcType=DECIMAL}, 
+      #{value11,jdbcType=DECIMAL}, #{value12,jdbcType=DECIMAL}, #{value13,jdbcType=DECIMAL}, 
+      #{value14,jdbcType=DECIMAL}, #{value15,jdbcType=DECIMAL}, #{value2,jdbcType=DECIMAL}, 
+      #{value3,jdbcType=DECIMAL}, #{value4,jdbcType=DECIMAL}, #{value5,jdbcType=DECIMAL}, 
+      #{value6,jdbcType=DECIMAL}, #{value7,jdbcType=DECIMAL}, #{value8,jdbcType=DECIMAL}, 
+      #{value9,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.RunningLog">
+    update running_log
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      hour = #{hour,jdbcType=BIGINT},
+      operator_duty = #{operatorDuty,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      tag1 = #{tag1,jdbcType=INTEGER},
+      tag10 = #{tag10,jdbcType=INTEGER},
+      tag11 = #{tag11,jdbcType=INTEGER},
+      tag12 = #{tag12,jdbcType=INTEGER},
+      tag13 = #{tag13,jdbcType=INTEGER},
+      tag14 = #{tag14,jdbcType=INTEGER},
+      tag15 = #{tag15,jdbcType=INTEGER},
+      tag2 = #{tag2,jdbcType=INTEGER},
+      tag3 = #{tag3,jdbcType=INTEGER},
+      tag4 = #{tag4,jdbcType=INTEGER},
+      tag5 = #{tag5,jdbcType=INTEGER},
+      tag6 = #{tag6,jdbcType=INTEGER},
+      tag7 = #{tag7,jdbcType=INTEGER},
+      tag8 = #{tag8,jdbcType=INTEGER},
+      tag9 = #{tag9,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      value1 = #{value1,jdbcType=DECIMAL},
+      value10 = #{value10,jdbcType=DECIMAL},
+      value11 = #{value11,jdbcType=DECIMAL},
+      value12 = #{value12,jdbcType=DECIMAL},
+      value13 = #{value13,jdbcType=DECIMAL},
+      value14 = #{value14,jdbcType=DECIMAL},
+      value15 = #{value15,jdbcType=DECIMAL},
+      value2 = #{value2,jdbcType=DECIMAL},
+      value3 = #{value3,jdbcType=DECIMAL},
+      value4 = #{value4,jdbcType=DECIMAL},
+      value5 = #{value5,jdbcType=DECIMAL},
+      value6 = #{value6,jdbcType=DECIMAL},
+      value7 = #{value7,jdbcType=DECIMAL},
+      value8 = #{value8,jdbcType=DECIMAL},
+      value9 = #{value9,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+  </select>
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.RunningLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hour" jdbcType="BIGINT" property="hour" />
+    <result column="operator_duty" jdbcType="VARCHAR" property="operatorDuty" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="tag1" jdbcType="INTEGER" property="tag1" />
+    <result column="tag10" jdbcType="INTEGER" property="tag10" />
+    <result column="tag11" jdbcType="INTEGER" property="tag11" />
+    <result column="tag12" jdbcType="INTEGER" property="tag12" />
+    <result column="tag13" jdbcType="INTEGER" property="tag13" />
+    <result column="tag14" jdbcType="INTEGER" property="tag14" />
+    <result column="tag15" jdbcType="INTEGER" property="tag15" />
+    <result column="tag2" jdbcType="INTEGER" property="tag2" />
+    <result column="tag3" jdbcType="INTEGER" property="tag3" />
+    <result column="tag4" jdbcType="INTEGER" property="tag4" />
+    <result column="tag5" jdbcType="INTEGER" property="tag5" />
+    <result column="tag6" jdbcType="INTEGER" property="tag6" />
+    <result column="tag7" jdbcType="INTEGER" property="tag7" />
+    <result column="tag8" jdbcType="INTEGER" property="tag8" />
+    <result column="tag9" jdbcType="INTEGER" property="tag9" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="value1" jdbcType="DECIMAL" property="value1" />
+    <result column="value10" jdbcType="DECIMAL" property="value10" />
+    <result column="value11" jdbcType="DECIMAL" property="value11" />
+    <result column="value12" jdbcType="DECIMAL" property="value12" />
+    <result column="value13" jdbcType="DECIMAL" property="value13" />
+    <result column="value14" jdbcType="DECIMAL" property="value14" />
+    <result column="value15" jdbcType="DECIMAL" property="value15" />
+    <result column="value2" jdbcType="DECIMAL" property="value2" />
+    <result column="value3" jdbcType="DECIMAL" property="value3" />
+    <result column="value4" jdbcType="DECIMAL" property="value4" />
+    <result column="value5" jdbcType="DECIMAL" property="value5" />
+    <result column="value6" jdbcType="DECIMAL" property="value6" />
+    <result column="value7" jdbcType="DECIMAL" property="value7" />
+    <result column="value8" jdbcType="DECIMAL" property="value8" />
+    <result column="value9" jdbcType="DECIMAL" property="value9" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.devise.checkup.domain.RunningLog">
+    insert into running_log (id, create_by, create_time, 
+      description, hour, operator_duty, 
+      status, tag1, tag10, 
+      tag11, tag12, tag13, 
+      tag14, tag15, tag2, 
+      tag3, tag4, tag5, tag6, 
+      tag7, tag8, tag9, update_by, 
+      update_time, value1, value10, 
+      value11, value12, value13, 
+      value14, value15, value2, 
+      value3, value4, value5, 
+      value6, value7, value8, 
+      value9)
+    values (#{id,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR}, #{hour,jdbcType=BIGINT}, #{operatorDuty,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{tag1,jdbcType=INTEGER}, #{tag10,jdbcType=INTEGER}, 
+      #{tag11,jdbcType=INTEGER}, #{tag12,jdbcType=INTEGER}, #{tag13,jdbcType=INTEGER}, 
+      #{tag14,jdbcType=INTEGER}, #{tag15,jdbcType=INTEGER}, #{tag2,jdbcType=INTEGER}, 
+      #{tag3,jdbcType=INTEGER}, #{tag4,jdbcType=INTEGER}, #{tag5,jdbcType=INTEGER}, #{tag6,jdbcType=INTEGER}, 
+      #{tag7,jdbcType=INTEGER}, #{tag8,jdbcType=INTEGER}, #{tag9,jdbcType=INTEGER}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{value1,jdbcType=DECIMAL}, #{value10,jdbcType=DECIMAL}, 
+      #{value11,jdbcType=DECIMAL}, #{value12,jdbcType=DECIMAL}, #{value13,jdbcType=DECIMAL}, 
+      #{value14,jdbcType=DECIMAL}, #{value15,jdbcType=DECIMAL}, #{value2,jdbcType=DECIMAL}, 
+      #{value3,jdbcType=DECIMAL}, #{value4,jdbcType=DECIMAL}, #{value5,jdbcType=DECIMAL}, 
+      #{value6,jdbcType=DECIMAL}, #{value7,jdbcType=DECIMAL}, #{value8,jdbcType=DECIMAL}, 
+      #{value9,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.RunningLog">
+    update running_log
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      hour = #{hour,jdbcType=BIGINT},
+      operator_duty = #{operatorDuty,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      tag1 = #{tag1,jdbcType=INTEGER},
+      tag10 = #{tag10,jdbcType=INTEGER},
+      tag11 = #{tag11,jdbcType=INTEGER},
+      tag12 = #{tag12,jdbcType=INTEGER},
+      tag13 = #{tag13,jdbcType=INTEGER},
+      tag14 = #{tag14,jdbcType=INTEGER},
+      tag15 = #{tag15,jdbcType=INTEGER},
+      tag2 = #{tag2,jdbcType=INTEGER},
+      tag3 = #{tag3,jdbcType=INTEGER},
+      tag4 = #{tag4,jdbcType=INTEGER},
+      tag5 = #{tag5,jdbcType=INTEGER},
+      tag6 = #{tag6,jdbcType=INTEGER},
+      tag7 = #{tag7,jdbcType=INTEGER},
+      tag8 = #{tag8,jdbcType=INTEGER},
+      tag9 = #{tag9,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      value1 = #{value1,jdbcType=DECIMAL},
+      value10 = #{value10,jdbcType=DECIMAL},
+      value11 = #{value11,jdbcType=DECIMAL},
+      value12 = #{value12,jdbcType=DECIMAL},
+      value13 = #{value13,jdbcType=DECIMAL},
+      value14 = #{value14,jdbcType=DECIMAL},
+      value15 = #{value15,jdbcType=DECIMAL},
+      value2 = #{value2,jdbcType=DECIMAL},
+      value3 = #{value3,jdbcType=DECIMAL},
+      value4 = #{value4,jdbcType=DECIMAL},
+      value5 = #{value5,jdbcType=DECIMAL},
+      value6 = #{value6,jdbcType=DECIMAL},
+      value7 = #{value7,jdbcType=DECIMAL},
+      value8 = #{value8,jdbcType=DECIMAL},
+      value9 = #{value9,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+  </select>
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.RunningLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="hour" jdbcType="BIGINT" property="hour" />
+    <result column="operator_duty" jdbcType="VARCHAR" property="operatorDuty" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="tag1" jdbcType="INTEGER" property="tag1" />
+    <result column="tag10" jdbcType="INTEGER" property="tag10" />
+    <result column="tag11" jdbcType="INTEGER" property="tag11" />
+    <result column="tag12" jdbcType="INTEGER" property="tag12" />
+    <result column="tag13" jdbcType="INTEGER" property="tag13" />
+    <result column="tag14" jdbcType="INTEGER" property="tag14" />
+    <result column="tag15" jdbcType="INTEGER" property="tag15" />
+    <result column="tag2" jdbcType="INTEGER" property="tag2" />
+    <result column="tag3" jdbcType="INTEGER" property="tag3" />
+    <result column="tag4" jdbcType="INTEGER" property="tag4" />
+    <result column="tag5" jdbcType="INTEGER" property="tag5" />
+    <result column="tag6" jdbcType="INTEGER" property="tag6" />
+    <result column="tag7" jdbcType="INTEGER" property="tag7" />
+    <result column="tag8" jdbcType="INTEGER" property="tag8" />
+    <result column="tag9" jdbcType="INTEGER" property="tag9" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="value1" jdbcType="DECIMAL" property="value1" />
+    <result column="value10" jdbcType="DECIMAL" property="value10" />
+    <result column="value11" jdbcType="DECIMAL" property="value11" />
+    <result column="value12" jdbcType="DECIMAL" property="value12" />
+    <result column="value13" jdbcType="DECIMAL" property="value13" />
+    <result column="value14" jdbcType="DECIMAL" property="value14" />
+    <result column="value15" jdbcType="DECIMAL" property="value15" />
+    <result column="value2" jdbcType="DECIMAL" property="value2" />
+    <result column="value3" jdbcType="DECIMAL" property="value3" />
+    <result column="value4" jdbcType="DECIMAL" property="value4" />
+    <result column="value5" jdbcType="DECIMAL" property="value5" />
+    <result column="value6" jdbcType="DECIMAL" property="value6" />
+    <result column="value7" jdbcType="DECIMAL" property="value7" />
+    <result column="value8" jdbcType="DECIMAL" property="value8" />
+    <result column="value9" jdbcType="DECIMAL" property="value9" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.devise.checkup.domain.RunningLog">
+    insert into running_log (id, create_by, create_time, 
+      description, hour, operator_duty, 
+      status, tag1, tag10, 
+      tag11, tag12, tag13, 
+      tag14, tag15, tag2, 
+      tag3, tag4, tag5, tag6, 
+      tag7, tag8, tag9, update_by, 
+      update_time, value1, value10, 
+      value11, value12, value13, 
+      value14, value15, value2, 
+      value3, value4, value5, 
+      value6, value7, value8, 
+      value9)
+    values (#{id,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR}, #{hour,jdbcType=BIGINT}, #{operatorDuty,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{tag1,jdbcType=INTEGER}, #{tag10,jdbcType=INTEGER}, 
+      #{tag11,jdbcType=INTEGER}, #{tag12,jdbcType=INTEGER}, #{tag13,jdbcType=INTEGER}, 
+      #{tag14,jdbcType=INTEGER}, #{tag15,jdbcType=INTEGER}, #{tag2,jdbcType=INTEGER}, 
+      #{tag3,jdbcType=INTEGER}, #{tag4,jdbcType=INTEGER}, #{tag5,jdbcType=INTEGER}, #{tag6,jdbcType=INTEGER}, 
+      #{tag7,jdbcType=INTEGER}, #{tag8,jdbcType=INTEGER}, #{tag9,jdbcType=INTEGER}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{value1,jdbcType=DECIMAL}, #{value10,jdbcType=DECIMAL}, 
+      #{value11,jdbcType=DECIMAL}, #{value12,jdbcType=DECIMAL}, #{value13,jdbcType=DECIMAL}, 
+      #{value14,jdbcType=DECIMAL}, #{value15,jdbcType=DECIMAL}, #{value2,jdbcType=DECIMAL}, 
+      #{value3,jdbcType=DECIMAL}, #{value4,jdbcType=DECIMAL}, #{value5,jdbcType=DECIMAL}, 
+      #{value6,jdbcType=DECIMAL}, #{value7,jdbcType=DECIMAL}, #{value8,jdbcType=DECIMAL}, 
+      #{value9,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.RunningLog">
+    update running_log
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      hour = #{hour,jdbcType=BIGINT},
+      operator_duty = #{operatorDuty,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      tag1 = #{tag1,jdbcType=INTEGER},
+      tag10 = #{tag10,jdbcType=INTEGER},
+      tag11 = #{tag11,jdbcType=INTEGER},
+      tag12 = #{tag12,jdbcType=INTEGER},
+      tag13 = #{tag13,jdbcType=INTEGER},
+      tag14 = #{tag14,jdbcType=INTEGER},
+      tag15 = #{tag15,jdbcType=INTEGER},
+      tag2 = #{tag2,jdbcType=INTEGER},
+      tag3 = #{tag3,jdbcType=INTEGER},
+      tag4 = #{tag4,jdbcType=INTEGER},
+      tag5 = #{tag5,jdbcType=INTEGER},
+      tag6 = #{tag6,jdbcType=INTEGER},
+      tag7 = #{tag7,jdbcType=INTEGER},
+      tag8 = #{tag8,jdbcType=INTEGER},
+      tag9 = #{tag9,jdbcType=INTEGER},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      value1 = #{value1,jdbcType=DECIMAL},
+      value10 = #{value10,jdbcType=DECIMAL},
+      value11 = #{value11,jdbcType=DECIMAL},
+      value12 = #{value12,jdbcType=DECIMAL},
+      value13 = #{value13,jdbcType=DECIMAL},
+      value14 = #{value14,jdbcType=DECIMAL},
+      value15 = #{value15,jdbcType=DECIMAL},
+      value2 = #{value2,jdbcType=DECIMAL},
+      value3 = #{value3,jdbcType=DECIMAL},
+      value4 = #{value4,jdbcType=DECIMAL},
+      value5 = #{value5,jdbcType=DECIMAL},
+      value6 = #{value6,jdbcType=DECIMAL},
+      value7 = #{value7,jdbcType=DECIMAL},
+      value8 = #{value8,jdbcType=DECIMAL},
+      value9 = #{value9,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
+    tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
+    tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 
+    value15, value2, value3, value4, value5, value6, value7, value8, value9
+    from running_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
     select id, create_by, create_time, description, hour, operator_duty, status, tag1, 
     tag10, tag11, tag12, tag13, tag14, tag15, tag2, tag3, tag4, tag5, tag6, tag7, tag8, 
     tag9, update_by, update_time, value1, value10, value11, value12, value13, value14, 

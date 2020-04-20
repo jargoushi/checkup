@@ -6,7 +6,7 @@
     <groupId>com.devise</groupId>
     <artifactId>checkup</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>checkup</name>
     <description>巡检管理系统</description>
 
@@ -92,7 +92,7 @@
             <version>2.9.2</version>
         </dependency>
 
-<!--        poi 导出excel-->
+        <!--        poi 导出excel-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -103,6 +103,21 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.16</version>
         </dependency>
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.thetransactioncompany/java-property-utils &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.thetransactioncompany</groupId>-->
+<!--            <artifactId>java-property-utils</artifactId>-->
+<!--            <version>1.9.1</version>-->
+<!--        </dependency>-->
+
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.thetransactioncompany/java-property-utils &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.thetransactioncompany</groupId>-->
+<!--            <artifactId>java-property-utils</artifactId>-->
+<!--            <version>1.9.1</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 

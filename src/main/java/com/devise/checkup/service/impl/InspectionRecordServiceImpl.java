@@ -59,7 +59,7 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
 
     @Override
     public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
-        String fileName = "inspectionRecord" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".xlsx";
+        String fileName = "inspectionRecord" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         super.exportFormWork(startTime, endTime, fileName, request, response);
     }
 

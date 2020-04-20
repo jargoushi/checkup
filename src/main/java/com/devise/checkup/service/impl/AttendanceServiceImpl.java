@@ -60,7 +60,7 @@ public class AttendanceServiceImpl extends AbstractExportService implements Atte
     @Override
     public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
 
-        String fileName = "attendance" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".xlsx";
+        String fileName = "attendance" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         super.exportFormWork(startTime, endTime, fileName, request, response);
     }
 

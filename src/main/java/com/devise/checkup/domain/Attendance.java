@@ -1,10 +1,6 @@
 package com.devise.checkup.domain;
 
-import lombok.Data;
-import lombok.ToString;
-
 import java.util.Date;
-
 
 public class Attendance {
     private Long id;
@@ -60,7 +56,7 @@ public class Attendance {
     }
 
     public void setCreateBy(String createBy) {
-        this.createBy = createBy;
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
     public Date getCreateTime() {
@@ -76,7 +72,7 @@ public class Attendance {
     }
 
     public void setDelFlag(String delFlag) {
-        this.delFlag = delFlag;
+        this.delFlag = delFlag == null ? null : delFlag.trim();
     }
 
     public String getDuration() {
@@ -84,7 +80,7 @@ public class Attendance {
     }
 
     public void setDuration(String duration) {
-        this.duration = duration;
+        this.duration = duration == null ? null : duration.trim();
     }
 
     public String getEnterImage() {
@@ -92,7 +88,7 @@ public class Attendance {
     }
 
     public void setEnterImage(String enterImage) {
-        this.enterImage = enterImage;
+        this.enterImage = enterImage == null ? null : enterImage.trim();
     }
 
     public String getEnterRecording() {
@@ -100,7 +96,7 @@ public class Attendance {
     }
 
     public void setEnterRecording(String enterRecording) {
-        this.enterRecording = enterRecording;
+        this.enterRecording = enterRecording == null ? null : enterRecording.trim();
     }
 
     public Date getEntryTime() {
@@ -124,7 +120,7 @@ public class Attendance {
     }
 
     public void setOutImage(String outImage) {
-        this.outImage = outImage;
+        this.outImage = outImage == null ? null : outImage.trim();
     }
 
     public String getOutRecording() {
@@ -132,7 +128,7 @@ public class Attendance {
     }
 
     public void setOutRecording(String outRecording) {
-        this.outRecording = outRecording;
+        this.outRecording = outRecording == null ? null : outRecording.trim();
     }
 
     public Date getOutTime() {
@@ -156,7 +152,7 @@ public class Attendance {
     }
 
     public void setRealname(String realname) {
-        this.realname = realname;
+        this.realname = realname == null ? null : realname.trim();
     }
 
     public String getStatus() {
@@ -164,7 +160,7 @@ public class Attendance {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = status == null ? null : status.trim();
     }
 
     public String getUpdateBy() {
@@ -172,7 +168,7 @@ public class Attendance {
     }
 
     public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
+        this.updateBy = updateBy == null ? null : updateBy.trim();
     }
 
     public Date getUpdateTime() {
@@ -188,7 +184,7 @@ public class Attendance {
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.userId = userId == null ? null : userId.trim();
     }
 
     public String getUsername() {
@@ -196,7 +192,7 @@ public class Attendance {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
     }
 
     public String getWorkNo() {
@@ -204,6 +200,6 @@ public class Attendance {
     }
 
     public void setWorkNo(String workNo) {
-        this.workNo = workNo;
+        this.workNo = workNo == null ? null : workNo.trim();
     }
 }

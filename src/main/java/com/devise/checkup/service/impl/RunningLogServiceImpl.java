@@ -59,7 +59,7 @@ public class RunningLogServiceImpl extends AbstractExportService implements Runn
 
     @Override
     public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
-        String fileName = "runningLog" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + ".xlsx";
+        String fileName = "runningLog" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         super.exportFormWork(startTime, endTime, fileName, request, response);
     }
 
