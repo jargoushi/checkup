@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 @Api(value = "考勤")
 @RestController
 @RequestMapping("/attend")
+@CrossOrigin
 public class AttendanceController {
 
     private static final Logger logger = LoggerFactory.getLogger(AttendanceController.class);

@@ -44,6 +44,8 @@ public class RunningLogServiceImpl extends AbstractExportService implements Runn
 
     @Override
     public Boolean addRunningLog(RunningLog attendance) {
+
+        attendance.setCreateTime(new Date());
         return runningLogMapper.insert(attendance) > 0;
     }
 
@@ -65,7 +67,7 @@ public class RunningLogServiceImpl extends AbstractExportService implements Runn
 
     @Override
     protected List<?> getData(String startTime, String endTime) {
-        return runningLogMapper.selectByCondition(startTime, endTime);
+        return runningLogMapper.selectAll();
     }
 
     @Override

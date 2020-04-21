@@ -44,6 +44,7 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
 
     @Override
     public Boolean addInspectionRecord(InspectionRecord attendance) {
+        attendance.setCreateTime(new Date());
         return inspectionRecordMapper.insert(attendance) > 0;
     }
 
@@ -71,7 +72,7 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
 
     @Override
     protected List<?> getData(String startTime, String endTime) {
-        return inspectionRecordMapper.selectByCondition(startTime, endTime);
+        return inspectionRecordMapper.selectAll();
     }
 
     @Override

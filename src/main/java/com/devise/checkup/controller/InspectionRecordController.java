@@ -1,5 +1,7 @@
 package com.devise.checkup.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.devise.checkup.domain.InspectionRecord;
 import com.devise.checkup.domain.PageBaseInfo;
 import com.devise.checkup.domain.ResponseResult;
@@ -23,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @Api(value = "巡检模板")
 @RestController
 @RequestMapping("/inspectionRecord")
+@CrossOrigin
 public class InspectionRecordController {
 
     private static final Logger logger = LoggerFactory.getLogger(InspectionRecordController.class);
@@ -51,10 +54,14 @@ public class InspectionRecordController {
 
     @PostMapping("/add")
     @ApiOperation(value = "新增巡检模板")
-    public ResponseResult<Boolean> addInspectionRecord(@RequestBody InspectionRecord attendance) {
+    public ResponseResult<Boolean> addInspectionRecord(@RequestBody String attendance) {
+
         logger.info("新增巡检模板 start, attendance=【{}】", attendance);
         try {
-            Boolean flag = inspectionRecordService.addInspectionRecord(attendance);
+            JSONObject jsonObject = JSON.parseObject(attendance);
+            String str = jsonObject.getString("attendance");
+            InspectionRecord record = JSON.parseObject(str, InspectionRecord.class);
+            Boolean flag = inspectionRecordService.addInspectionRecord(record);
             logger.info("新增巡检模板 success, 响应结果=【{}】", flag);
             return new ResponseResult().success(flag);
         } catch (Exception e) {
@@ -66,10 +73,13 @@ public class InspectionRecordController {
 
     @PostMapping("/modify")
     @ApiOperation(value = "修改巡检模板")
-    public ResponseResult<Boolean> modifyInspectionRecord(@RequestBody InspectionRecord attendance) {
+    public ResponseResult<Boolean> modifyInspectionRecord(@RequestBody String attendance) {
         logger.info("修改巡检模板 start, attendance=【{}】", attendance);
         try {
-            Boolean flag = inspectionRecordService.modifyInspectionRecord(attendance);
+            JSONObject jsonObject = JSON.parseObject(attendance);
+            String str = jsonObject.getString("attendance");
+            InspectionRecord record = JSON.parseObject(str, InspectionRecord.class);
+            Boolean flag = inspectionRecordService.modifyInspectionRecord(record);
             logger.info("修改巡检模板 success, 响应结果=【{}】", flag);
             return new ResponseResult().success(flag);
         } catch (Exception e) {

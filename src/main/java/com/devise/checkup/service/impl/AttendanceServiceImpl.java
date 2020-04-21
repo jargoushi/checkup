@@ -44,6 +44,7 @@ public class AttendanceServiceImpl extends AbstractExportService implements Atte
 
     @Override
     public Boolean addAttendance(Attendance attendance) {
+        attendance.setCreateTime(new Date());
         return attendanceMapper.insert(attendance) > 0;
     }
 
@@ -66,7 +67,7 @@ public class AttendanceServiceImpl extends AbstractExportService implements Atte
 
     @Override
     protected List<?> getData(String startTime, String endTime) {
-        return attendanceMapper.selectByCondition(startTime, endTime);
+        return attendanceMapper.selectAll();
     }
 
     protected List<String> getTitles() {

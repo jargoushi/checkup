@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @Api(value = "运行日志")
 @RestController
 @RequestMapping("/runninglog")
+@CrossOrigin
 public class RunningLogController {
 
     private static final Logger logger = LoggerFactory.getLogger(RunningLogController.class);

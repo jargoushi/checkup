@@ -202,4 +202,30 @@ public class InspectionRecord {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        return "InspectionRecord{" +
+                "id=" + id +
+                ", checkPerson='" + checkPerson + '\'' +
+                ", conclusion=" + conclusion +
+                ", createBy='" + createBy + '\'' +
+                ", createTime=" + createTime +
+                ", description='" + description + '\'' +
+                ", duty=" + duty +
+                ", problem1='" + problem1 + '\'' +
+                ", problem2='" + problem2 + '\'' +
+                ", problem3='" + problem3 + '\'' +
+                ", problem4='" + problem4 + '\'' +
+                ", problem5='" + problem5 + '\'' +
+                ", problem6='" + problem6 + '\'' +
+                ", serial='" + serial + '\'' +
+                ", staff1='" + staff1 + '\'' +
+                ", staff2='" + staff2 + '\'' +
+                ", status='" + status + '\'' +
+                ", templateId=" + templateId +
+                ", updateBy='" + updateBy + '\'' +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }
