@@ -94,14 +94,12 @@ public class AttendanceController {
 
     @ApiOperation(value = "导出考勤信息")
     @GetMapping(value = "/export")
-    public void exportExcel(@RequestParam(required = false) String startTime,
-                                               @RequestParam(required = false) String endTime,
-                                               HttpServletRequest request,
+    public void exportExcel(HttpServletRequest request,
                                                HttpServletResponse response) {
 
-        logger.info("导出考勤信息 start, startTime=【{}】, endTime=【{}】", startTime, endTime);
+        logger.info("导出考勤信息 start");
         try {
-            attendanceService.exportExcel(startTime, endTime, request, response);
+            attendanceService.exportExcel(request, response);
             logger.info("导出考勤信息 success");
         } catch (Exception e) {
             logger.info("导出考勤信息 error", e);

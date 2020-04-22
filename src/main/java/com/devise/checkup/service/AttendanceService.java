@@ -30,5 +30,5 @@ public interface AttendanceService {
 
     Boolean deleteAttendance(Integer id);
 
-    void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response);
+    void exportExcel(HttpServletRequest request, HttpServletResponse response);
 }

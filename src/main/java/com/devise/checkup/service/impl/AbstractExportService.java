@@ -22,11 +22,11 @@ public abstract class AbstractExportService {
 
     private static final Logger logger = LoggerFactory.getLogger(AbstractExportService.class);
 
-    protected void exportFormWork(String startTime, String endTime, String fileName, HttpServletRequest request, HttpServletResponse response) {
+    protected void exportFormWork(String fileName, HttpServletRequest request, HttpServletResponse response) {
 
         try {
             // 1. 准备数据
-            List<?> data = getData(startTime, endTime);
+            List<?> data = getData();
             // 2. 准备表头
             List<String> titles = getTitles();
 
@@ -68,5 +68,5 @@ public abstract class AbstractExportService {
 
     protected abstract List<String> getTitles();
 
-    protected abstract List<?> getData(String startTime, String endTime);
+    protected abstract List<?> getData();
 }

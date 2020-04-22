@@ -35,22 +35,23 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
         PageHelper.startPage(page, rows);
 
         // 查询巡检模板
-        List<InspectionRecord> attendances = inspectionRecordMapper.selectByCondition(startTime, endTime);
+        List<InspectionRecord> records = inspectionRecordMapper.selectByCondition(startTime, endTime);
 
-        PageInfo pageInfo = new PageInfo(attendances);
+        PageInfo pageInfo = new PageInfo(records);
 
-        return new PageBaseInfo<>(page, pageInfo.getTotal(), pageInfo.getPages(), attendances);
+        return new PageBaseInfo<>(page, pageInfo.getTotal(), pageInfo.getPages(), records);
     }
 
     @Override
-    public Boolean addInspectionRecord(InspectionRecord attendance) {
-        attendance.setCreateTime(new Date());
-        return inspectionRecordMapper.insert(attendance) > 0;
+    public Boolean addInspectionRecord(InspectionRecord record) {
+        record.setCreateTime(new Date());
+        return inspectionRecordMapper.insert(record) > 0;
     }
 
     @Override
-    public Boolean modifyInspectionRecord(InspectionRecord attendance) {
-        return inspectionRecordMapper.updateByPrimaryKey(attendance) > 0;
+    public Boolean modifyInspectionRecord(InspectionRecord record) {
+        record.setUpdateTime(new Date());
+        return inspectionRecordMapper.updateByPrimaryKey(record) > 0;
     }
 
     @Override
@@ -59,9 +60,9 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
     }
 
     @Override
-    public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
+    public void exportExcel(HttpServletRequest request, HttpServletResponse response) {
         String fileName = "inspectionRecord" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        super.exportFormWork(startTime, endTime, fileName, request, response);
+        super.exportFormWork(fileName, request, response);
     }
 
     @Override
@@ -71,7 +72,7 @@ public class InspectionRecordServiceImpl extends AbstractExportService implement
     }
 
     @Override
-    protected List<?> getData(String startTime, String endTime) {
+    protected List<?> getData() {
         return inspectionRecordMapper.selectAll();
     }
 

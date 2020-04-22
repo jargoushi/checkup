@@ -93,14 +93,12 @@ public class RunningLogController {
 
     @ApiOperation(value = "导出运行日志")
     @GetMapping(value = "/export")
-    public void exportExcel(@RequestParam(required = false) String startTime,
-                            @RequestParam(required = false) String endTime,
-                            HttpServletRequest request,
+    public void exportExcel(HttpServletRequest request,
                             HttpServletResponse response) {
 
-        logger.info("导出运行日志 start, startTime=【{}】, endTime=【{}】", startTime, endTime);
+        logger.info("导出运行日志 start");
         try {
-            runningLogService.exportExcel(startTime, endTime, request, response);
+            runningLogService.exportExcel(request, response);
             logger.info("导出运行日志 success");
         } catch (Exception e) {
             logger.info("导出运行日志 error", e);

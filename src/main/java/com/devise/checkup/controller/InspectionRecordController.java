@@ -104,14 +104,12 @@ public class InspectionRecordController {
 
     @ApiOperation(value = "导出巡检模板")
     @GetMapping(value = "/export")
-    public void exportExcel(@RequestParam(required = false) String startTime,
-                            @RequestParam(required = false) String endTime,
-                            HttpServletRequest request,
+    public void exportExcel(HttpServletRequest request,
                             HttpServletResponse response) {
 
-        logger.info("导出巡检模板 start, startTime=【{}】, endTime=【{}】", startTime, endTime);
+        logger.info("导出巡检模板 start");
         try {
-            inspectionRecordService.exportExcel(startTime, endTime, request, response);
+            inspectionRecordService.exportExcel(request, response);
             logger.info("导出巡检模板 success");
         } catch (Exception e) {
             logger.info("导出巡检模板 error", e);

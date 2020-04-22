@@ -35,23 +35,24 @@ public class RunningLogServiceImpl extends AbstractExportService implements Runn
         PageHelper.startPage(page, rows);
 
         // 查询运行日志
-        List<RunningLog> attendances = runningLogMapper.selectByCondition(startTime, endTime);
+        List<RunningLog> runningLogs = runningLogMapper.selectByCondition(startTime, endTime);
 
-        PageInfo pageInfo = new PageInfo(attendances);
+        PageInfo pageInfo = new PageInfo(runningLogs);
 
-        return new PageBaseInfo<>(page, pageInfo.getTotal(), pageInfo.getPages(), attendances);
+        return new PageBaseInfo<>(page, pageInfo.getTotal(), pageInfo.getPages(), runningLogs);
     }
 
     @Override
-    public Boolean addRunningLog(RunningLog attendance) {
+    public Boolean addRunningLog(RunningLog runningLog) {
 
-        attendance.setCreateTime(new Date());
-        return runningLogMapper.insert(attendance) > 0;
+        runningLog.setCreateTime(new Date());
+        return runningLogMapper.insert(runningLog) > 0;
     }
 
     @Override
-    public Boolean modifyRunningLog(RunningLog attendance) {
-        return runningLogMapper.updateByPrimaryKey(attendance) > 0;
+    public Boolean modifyRunningLog(RunningLog runningLog) {
+        runningLog.setUpdateTime(new Date());
+        return runningLogMapper.updateByPrimaryKey(runningLog) > 0;
     }
 
     @Override
@@ -60,13 +61,13 @@ public class RunningLogServiceImpl extends AbstractExportService implements Runn
     }
 
     @Override
-    public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
+    public void exportExcel(HttpServletRequest request, HttpServletResponse response) {
         String fileName = "runningLog" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        super.exportFormWork(startTime, endTime, fileName, request, response);
+        super.exportFormWork(fileName, request, response);
     }
 
     @Override
-    protected List<?> getData(String startTime, String endTime) {
+    protected List<?> getData() {
         return runningLogMapper.selectAll();
     }
 

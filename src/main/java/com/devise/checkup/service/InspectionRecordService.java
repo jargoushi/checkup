@@ -22,7 +22,7 @@ public interface InspectionRecordService {
 
     Boolean deleteInspectionRecord(Integer id);
 
-    void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response);
+    void exportExcel(HttpServletRequest request, HttpServletResponse response);
 
     Boolean remind();
 

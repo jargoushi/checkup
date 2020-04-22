@@ -22,5 +22,5 @@ public interface RunningLogService {
 
     Boolean deleteRunningLog(Integer id);
 
-    void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response);
+    void exportExcel(HttpServletRequest request, HttpServletResponse response);
 }

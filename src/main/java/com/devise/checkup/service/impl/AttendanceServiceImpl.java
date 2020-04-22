@@ -50,6 +50,7 @@ public class AttendanceServiceImpl extends AbstractExportService implements Atte
 
     @Override
     public Boolean modifyAttendance(Attendance attendance) {
+        attendance.setUpdateTime(new Date());
         return attendanceMapper.updateByPrimaryKey(attendance) > 0;
     }
 
@@ -59,14 +60,14 @@ public class AttendanceServiceImpl extends AbstractExportService implements Atte
     }
 
     @Override
-    public void exportExcel(String startTime, String endTime, HttpServletRequest request, HttpServletResponse response) {
+    public void exportExcel(HttpServletRequest request, HttpServletResponse response) {
 
         String fileName = "attendance" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        super.exportFormWork(startTime, endTime, fileName, request, response);
+        super.exportFormWork(fileName, request, response);
     }
 
     @Override
-    protected List<?> getData(String startTime, String endTime) {
+    protected List<?> getData() {
         return attendanceMapper.selectAll();
     }
 

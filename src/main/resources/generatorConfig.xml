@@ -31,11 +31,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table schema="attendance" tableName="attendance" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table schema="inspection_record" tableName="inspection_record" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table schema="running_log" tableName="running_log" enableCountByExample="false" enableDeleteByExample="false"
+        <table schema="checkPerson" tableName="checkPerson" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>
