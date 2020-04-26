@@ -27,6 +27,8 @@ public class CheckPersonServiceImpl extends AbstractExportService implements Che
 
     @Autowired
     private CheckPersonMapper checkPersonMapper;
+    // 每月最大排班号
+    private static final int MAX_CODE = 21;
 
     @Override
     public PageBaseInfo<CheckPerson> listCheckPerson(String startTime, String endTime, int page, int rows) {
@@ -44,6 +46,17 @@ public class CheckPersonServiceImpl extends AbstractExportService implements Che
 
     @Override
     public Boolean addCheckPerson(CheckPerson record) {
+        // 查询已存存在的最大排班号
+        CheckPerson person = checkPersonMapper.queryMaxCodeOrderByCreateTime();
+        Integer code = null;
+        if (person == null) {
+            code = 1;
+        } else if (person.getCode() == null || person.getCode() >= MAX_CODE) {
+
+        } else {
+            code = person.getCode() + 1;
+        }
+        record.setCode(code);
         record.setCreatetime(new Date());
         return checkPersonMapper.insert(record) > 0;
     }

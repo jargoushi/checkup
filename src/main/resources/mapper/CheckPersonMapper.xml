@@ -50,4 +50,11 @@
     where createTime >= #{startTime} and createTime <= #{endTime}
     ]]>
     </select>
+    <select id="queryMaxCodeOrderByCreateTime" resultType="com.devise.checkup.domain.CheckPerson">
+      <![CDATA[
+      select id, name, age, sex, type, code, createTime, updateTime
+    from checkperson
+    order by createTime desc limit 1
+    ]]>
+    </select>
 </mapper>

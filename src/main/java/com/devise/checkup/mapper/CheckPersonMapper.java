@@ -19,4 +19,6 @@ public interface CheckPersonMapper {
     int updateByPrimaryKey(CheckPerson record);
 
     List<CheckPerson> selectByCondition(@Param("startTime") String startTime,@Param("endTime") String endTime);
+
+    CheckPerson queryMaxCodeOrderByCreateTime();
 }
