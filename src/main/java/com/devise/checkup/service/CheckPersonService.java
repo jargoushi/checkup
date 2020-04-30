@@ -1,5 +1,6 @@
 package com.devise.checkup.service;
 
+
 import com.devise.checkup.domain.CheckPerson;
 import com.devise.checkup.domain.PageBaseInfo;
 
