@@ -88,13 +88,10 @@ public class CheckPersonServiceImpl extends AbstractExportService implements Che
     protected List<String> getTitles() {
         List<String> titles = new ArrayList<>();
         titles.add("主键");
-        titles.add("姓名");
-        titles.add("年龄");
-        titles.add("性别");
-        titles.add("工种");
-        titles.add("版次号");
-        titles.add("创建时间");
-        titles.add("更新时间");
+        titles.add("设备名称");
+        titles.add("部位名称");
+        titles.add("描述");
+        titles.add("检修项目及标准");
 
         return titles;
     }
