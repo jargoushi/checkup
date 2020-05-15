@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.devise.checkup.mapper.CheckstandardMapper" >
+  <resultMap id="BaseResultMap" type="com.devise.checkup.domain.Checkstandard" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="val1" property="val1" jdbcType="VARCHAR" />
+    <result column="val2" property="val2" jdbcType="VARCHAR" />
+    <result column="val3" property="val3" jdbcType="VARCHAR" />
+    <result column="val4" property="val4" jdbcType="VARCHAR" />
+    <result column="val5" property="val5" jdbcType="VARCHAR" />
+    <result column="val6" property="val6" jdbcType="VARCHAR" />
+    <result column="val7" property="val7" jdbcType="VARCHAR" />
+    <result column="val8" property="val8" jdbcType="VARCHAR" />
+    <result column="val9" property="val9" jdbcType="VARCHAR" />
+    <result column="val10" property="val10" jdbcType="VARCHAR" />
+    <result column="val11" property="val11" jdbcType="VARCHAR" />
+    <result column="val12" property="val12" jdbcType="VARCHAR" />
+    <result column="val13" property="val13" jdbcType="VARCHAR" />
+    <result column="val14" property="val14" jdbcType="VARCHAR" />
+    <result column="val15" property="val15" jdbcType="VARCHAR" />
+    <result column="val16" property="val16" jdbcType="VARCHAR" />
+    <result column="serial" property="serial" jdbcType="VARCHAR" />
+    <result column="templateId" property="templateid" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from checkstandard
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.devise.checkup.domain.Checkstandard" >
+    insert into checkstandard (id, val1, val2, 
+      val3, val4, val5, val6, 
+      val7, val8, val9, val10, 
+      val11, val12, val13, 
+      val14, val15, val16, 
+      serial, templateId)
+    values (#{id,jdbcType=INTEGER}, #{val1,jdbcType=VARCHAR}, #{val2,jdbcType=VARCHAR}, 
+      #{val3,jdbcType=VARCHAR}, #{val4,jdbcType=VARCHAR}, #{val5,jdbcType=VARCHAR}, #{val6,jdbcType=VARCHAR}, 
+      #{val7,jdbcType=VARCHAR}, #{val8,jdbcType=VARCHAR}, #{val9,jdbcType=VARCHAR}, #{val10,jdbcType=VARCHAR}, 
+      #{val11,jdbcType=VARCHAR}, #{val12,jdbcType=VARCHAR}, #{val13,jdbcType=VARCHAR}, 
+      #{val14,jdbcType=VARCHAR}, #{val15,jdbcType=VARCHAR}, #{val16,jdbcType=VARCHAR}, 
+      #{serial,jdbcType=VARCHAR}, #{templateid,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.devise.checkup.domain.Checkstandard" >
+    update checkstandard
+    set val1 = #{val1,jdbcType=VARCHAR},
+      val2 = #{val2,jdbcType=VARCHAR},
+      val3 = #{val3,jdbcType=VARCHAR},
+      val4 = #{val4,jdbcType=VARCHAR},
+      val5 = #{val5,jdbcType=VARCHAR},
+      val6 = #{val6,jdbcType=VARCHAR},
+      val7 = #{val7,jdbcType=VARCHAR},
+      val8 = #{val8,jdbcType=VARCHAR},
+      val9 = #{val9,jdbcType=VARCHAR},
+      val10 = #{val10,jdbcType=VARCHAR},
+      val11 = #{val11,jdbcType=VARCHAR},
+      val12 = #{val12,jdbcType=VARCHAR},
+      val13 = #{val13,jdbcType=VARCHAR},
+      val14 = #{val14,jdbcType=VARCHAR},
+      val15 = #{val15,jdbcType=VARCHAR},
+      val16 = #{val16,jdbcType=VARCHAR},
+      serial = #{serial,jdbcType=VARCHAR},
+      templateId = #{templateid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12, 
+    val13, val14, val15, val16, serial, templateId
+    from checkstandard
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12, 
+    val13, val14, val15, val16, serial, templateId
+    from checkstandard
+  </select>
+
+  <select id="selectByCondition" resultMap="BaseResultMap" >
+    select id, val1, val2, val3, val4, val5, val6, val7, val8, val9, val10, val11, val12,
+    val13, val14, val15, val16, serial, templateId
+    from checkstandard
+    where serial = #{device} and  templateId = #{place}
+  </select>
+
+
+</mapper>

@@ -60,6 +60,9 @@ public class Checkstandard {
         this.templateid = templateid;
     }
 
+    public Checkstandard() {
+    }
+
     public Integer getId() {
         return id;
     }

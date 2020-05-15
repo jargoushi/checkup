@@ -1,5 +1,6 @@
 package com.devise.checkup.util;
 
+import com.devise.checkup.domain.Checkmanage;
 import com.devise.checkup.domain.Checkstandard;
 import com.sun.corba.se.spi.orbutil.threadpool.Work;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -23,7 +24,7 @@ import java.util.List;
  */
 public class LeadingInExcelUtils {
 
-    public static List<Checkstandard> readExcel(MultipartFile file) {
+    public static List<Checkmanage> readExcel(MultipartFile file) {
 
         Workbook workbook = null;
         String fileName = file.getOriginalFilename();
@@ -49,30 +50,17 @@ public class LeadingInExcelUtils {
         int lastRowNum = sheet.getLastRowNum();
         // 解析每一行的内容
         Row row;
-        List<Checkstandard> checkstandards = new ArrayList<>();
+        List<Checkmanage> checkmanages = new ArrayList<>();
         for (int i = 1; i <= lastRowNum; i++) {
             row = sheet.getRow(i);
-            Checkstandard standard = new Checkstandard(row.getCell(0).getStringCellValue(),
-                    row.getCell(1).getStringCellValue(),
-                    row.getCell(2).getStringCellValue(),
-                    row.getCell(3).getStringCellValue(),
-                    row.getCell(4).getStringCellValue(),
-                    row.getCell(5).getStringCellValue(),
-                    row.getCell(6).getStringCellValue(),
-                    row.getCell(7).getStringCellValue(),
-                    row.getCell(8).getStringCellValue(),
-                    row.getCell(9).getStringCellValue(),
-                    row.getCell(10).getStringCellValue(),
-                    row.getCell(11).getStringCellValue(),
-                    row.getCell(12).getStringCellValue(),
-                    row.getCell(13).getStringCellValue(),
-                    row.getCell(14).getStringCellValue(),
-                    row.getCell(15).getStringCellValue(),
-                    row.getCell(16).getStringCellValue(),
-                    row.getCell(17).getStringCellValue());
-            checkstandards.add(standard);
+            Checkmanage checkmanage = new Checkmanage();
+            checkmanage.setDevice(row.getCell(0).getStringCellValue());
+            checkmanage.setPlace(row.getCell(1).getStringCellValue());
+            checkmanage.setDescription(row.getCell(2).getStringCellValue());
+
+            checkmanages.add(checkmanage);
         }
 
-        return checkstandards;
+        return checkmanages;
     }
 }

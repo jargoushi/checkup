@@ -1,5 +1,6 @@
 package com.devise.checkup.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.devise.checkup.domain.Checkmanage;
 import com.devise.checkup.domain.Checkstandard;
 import com.devise.checkup.domain.PageBaseInfo;
@@ -46,7 +47,7 @@ public class CheckmanageServiceImpl extends AbstractExportService implements Che
 
         PageInfo pageInfo = new PageInfo(records);
 
-        return new PageBaseInfo<>(page, pageInfo.getTotal(), pageInfo.getPages(), records);
+        return new PageBaseInfo(page, pageInfo.getTotal(), pageInfo.getPages(), records);
     }
 
     @Override
@@ -73,13 +74,20 @@ public class CheckmanageServiceImpl extends AbstractExportService implements Che
 
     @Override
     public void leadingIn(MultipartFile file) {
-        List<Checkstandard> checkstandards = LeadingInExcelUtils.readExcel(file);
-        if (checkstandards == null || checkstandards.size() == 0) {
+        List<Checkmanage> checkmanages = LeadingInExcelUtils.readExcel(file);
+        if (checkmanages == null || checkmanages.size() == 0) {
             return;
         }
         // 插入数据库表
-        checkstandards.forEach(standard -> {
-            checkstandardMapper.insert(standard);
+        checkmanages.forEach(checkmanage -> {
+            // 查询若巡检设备和巡检名称存在不删除
+            Checkmanage checkmanage1 = checkmanageMapper.selectByDeviceAndPlace(checkmanage.getDevice(), checkmanage.getPlace());
+            checkmanage.setCreatetime(new Date());
+            if (checkmanage1 == null) {
+                checkmanageMapper.insert(checkmanage);
+            } else {
+                checkmanageMapper.update(checkmanage);
+            }
         });
     }
 

@@ -1,5 +1,7 @@
 package com.devise.checkup.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.devise.checkup.domain.*;
 import com.devise.checkup.service.RunningLogService;
 import io.swagger.annotations.Api;
@@ -50,10 +52,13 @@ public class RunningLogController {
 
     @PostMapping("/add")
     @ApiOperation(value = "新增运行日志")
-    public ResponseResult<Boolean> addRunningLog(@RequestBody RunningLog attendance) {
-        logger.info("新增运行日志 start, attendance=【{}】", attendance);
+    public ResponseResult<Boolean> addRunningLog(@RequestBody String runningLog) {
+        logger.info("新增运行日志 start, runningLog=【{}】", runningLog);
         try {
-            Boolean flag = runningLogService.addRunningLog(attendance);
+            JSONObject jsonObject = JSON.parseObject(runningLog);
+            String str = jsonObject.getString("runingLog");
+            RunningLog record = JSON.parseObject(str, RunningLog.class);
+            Boolean flag = runningLogService.addRunningLog(record);
             logger.info("新增运行日志 success, 响应结果=【{}】", flag);
             return new ResponseResult().success(flag);
         } catch (Exception e) {

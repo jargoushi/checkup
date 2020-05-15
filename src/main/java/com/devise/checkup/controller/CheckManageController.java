@@ -36,9 +36,9 @@ public class CheckManageController {
     @GetMapping("/list")
     @ApiOperation(value = "分页查询巡检管理")
     public ResponseResult<PageBaseInfo<Checkmanage>> listCheckmanage(@RequestParam String startTime,
-                                                                     @RequestParam String endTime,
-                                                                        @RequestParam(required = false, defaultValue = "1") int page,
-                                                                     @RequestParam(required = false, defaultValue = "20") int rows) {
+                                                                          @RequestParam String endTime,
+                                                                          @RequestParam(required = false, defaultValue = "1") int page,
+                                                                          @RequestParam(required = false, defaultValue = "20") int rows) {
 
         logger.info("分页查询巡检管理 start, startTime=【{}】, endTime=【{}】, page=【{}】, rows=【{}】", startTime, endTime, page, rows);
         try {
